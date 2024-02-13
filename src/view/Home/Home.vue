@@ -1,5 +1,5 @@
 <template>
-    <mdui-top-app-bar>
+    <mdui-top-app-bar variant="center-aligned">
         <mdui-button-icon icon="menu"></mdui-button-icon>
         <mdui-top-app-bar-title>京城气象</mdui-top-app-bar-title>
         <div style="flex-grow: 1"></div>

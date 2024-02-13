@@ -1,15 +1,15 @@
 <template>
-    <BMS v-show="isScoreShow('bms')"></BMS>
-    <NMC v-show="isScoreShow('nmc')"></NMC>
-    <CMA v-show="isScoreShow('cma')"></CMA>
-    <CMDC v-show="isScoreShow('cmdc')"></CMDC>
-    <BM v-show="isScoreShow('bm')"></BM>
-    <WeatherOL v-show="isScoreShow('weatherol')"></WeatherOL>
-    <warning12379 v-show="isScoreShow('12379')"></warning12379>
+    <suspense> <BMS v-if="isScoreShow('bms')"></BMS></suspense>
+    <suspense> <NMC v-if="isScoreShow('nmc')"></NMC></suspense>
+    <suspense> <CMA v-if="isScoreShow('cma')"></CMA></suspense>
+    <suspense><CMDC v-if="isScoreShow('cmdc')"></CMDC></suspense>
+    <suspense><BM v-if="isScoreShow('bm')"></BM></suspense>
+    <suspense><WeatherOL v-if="isScoreShow('weatherol')"></WeatherOL></suspense>
+    <suspense><warning12379 v-if="isScoreShow('12379')"></warning12379></suspense>
 </template>
 
 <script lang="ts" setup>
-    import BMS from './components/BMS.vue'
+    import BMS from './components/BMS/BMS.vue'
     import NMC from './components/NMC.vue'
     import CMA from './components/CMA.vue'
     import CMDC from './components/CMDC.vue'
