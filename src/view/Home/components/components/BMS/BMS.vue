@@ -20,9 +20,9 @@
     import { onMounted, ref } from 'vue'
     import Scene from './components/Scene.vue'
 
-    onMounted(() => {
-        ;(document.querySelector('.dee')!.shadowRoot!.querySelector('.container')! as HTMLElement).style.backgroundColor = 'rgb(var(--mdui-color-surface-container-low))'
-    })
+    // onMounted(() => {
+    //     ;(document.querySelector('.dee')!.shadowRoot!.querySelector('.container')! as HTMLElement).style.backgroundColor = 'rgb(var(--mdui-color-surface-container-low))'
+    // })
 
     //nextTick，不一定要用在onMounted里
 
@@ -34,8 +34,7 @@
         width: 100%;
     }
 
-    mdui-tab,
-    mdui-tabs {
+    mdui-tabs::part(container) {
         background-color: rgb(var(--mdui-color-surface-container-low)) !important;
     }
 </style>

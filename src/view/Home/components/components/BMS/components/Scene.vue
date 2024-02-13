@@ -51,4 +51,9 @@
     }
 </script>
 
-<style scoped></style>
+<style scoped>
+    mdui-select::part(menu) {
+        overflow: auto;
+        max-height: 300px;
+    }
+</style>
