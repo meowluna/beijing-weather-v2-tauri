@@ -1,5 +1,5 @@
 <template>
-    <h4>当前天气(发布时间{{ current.datetime }}):</h4>
+    <mdui-chip>发布时间{{ current.datetime }}</mdui-chip>
     <mdui-select :value="distrect" @change=";(distrect = $event.target.value), getDistrectInfo()" style="max-height: 50px">
         <mdui-menu-item :value="item.name" v-for="(item, index) in distrectSceneRes.value">{{ item.name }}</mdui-menu-item>
     </mdui-select>
@@ -15,13 +15,11 @@
 </template>
 
 <script lang="ts" setup>
-    import axios, { AxiosError } from 'axios'
     import { ref } from 'vue'
-
+    import axios, { AxiosError } from 'axios'
     //分区实况
     const distrectSceneRes = (await axios.get('http://62.234.62.126:8001/bms?id=8')).data
     const forecastRes = (await axios.get('http://62.234.62.126:8001/bms?id=11')).data
-    // console.log(distrectSceneRes)
     let current: any = {}
     let distrect = ref('市中心')
     getDistrectInfo()
