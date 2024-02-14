@@ -14,8 +14,6 @@
             </mdui-menu>
         </mdui-dropdown>
     </mdui-top-app-bar>
-
-    <!-- <MainView :componentsSelectsList="componentsSelectsList"></MainView> -->
     <Suspense><Scene v-if="isComponentShow('Scene')"></Scene></Suspense>
 </template>
 
