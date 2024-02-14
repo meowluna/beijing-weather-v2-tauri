@@ -1,8 +1,9 @@
 <template>
-    <mdui-top-app-bar variant="center-aligned">
-        <mdui-button-icon icon="refresh" onclick="location.reload()"></mdui-button-icon>
+    <mdui-top-app-bar variant="large">
         <mdui-top-app-bar-title>京城气象</mdui-top-app-bar-title>
         <div style="flex-grow: 1"></div>
+
+        <mdui-button-icon icon="refresh" onclick="location.reload()"></mdui-button-icon>
         <mdui-dropdown stay-open-on-click>
             <mdui-button-icon icon="more_vert" slot="trigger"></mdui-button-icon>
             <mdui-menu selects="multiple" :value="componentsSelectsList" @change="componentsSelectsList = $event.target.value">
