@@ -29,18 +29,22 @@
 </template>
 
 <script lang="ts" setup>
-    import { nextTick } from 'vue'
+    import { nextTick, getCurrentInstance } from 'vue'
     import { ref, onMounted } from 'vue'
+    defineOptions({ name: 'Forecast' })
+
+    const instance = getCurrentInstance()
+
     let content = ref()
     let appBar = ref()
-    // import BMS from './components/BMS.vue'
-    // import NMC from './components/NMC.vue'
-    let scoreSelectsList = ref(JSON.parse(localStorage.getItem('scoreSelectsList') || '["BMS"]'))
     onMounted(() => {
         appBar.value.scrollTarget = content.value
         appBar.value.style.position = 'absolute'
         ;(content.value.querySelector('mdui-tab')! as HTMLElement).click()
     })
+    // import BMS from './components/BMS.vue'
+    // import NMC from './components/NMC.vue'
+    let scoreSelectsList = ref(JSON.parse(localStorage.getItem(instance!.type.name + '_scoreSelectsList') || '["BMS"]'))
     function isScoreShow(item?: any) {
         nextTick(() => {
             try {
@@ -48,7 +52,7 @@
             } catch (error) {}
         })
         console.log(scoreSelectsList.value.find((el: string) => el == item))
-        localStorage.setItem('scoreSelectsList', JSON.stringify(scoreSelectsList.value))
+        localStorage.setItem(instance!.type.name + '_scoreSelectsList', JSON.stringify(scoreSelectsList.value))
         return scoreSelectsList.value.find((el: string) => el == item)
     }
 </script>

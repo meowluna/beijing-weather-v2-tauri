@@ -19,22 +19,34 @@
         </mdui-dropdown>
     </mdui-top-app-bar>
     <Suspense><Scene v-if="isComponentShow('Scene')"></Scene></Suspense>
+
     <Suspense><Forecast v-if="isComponentShow('Forecast')"></Forecast></Suspense>
-    <div style="height: 1000px"></div>
+    <div style="height: 500px"></div>
 </template>
 
 <script lang="ts" setup>
-    import { ref } from 'vue'
+    import { ref, onBeforeUnmount } from 'vue'
     import Scene from './components/Scene/Scene.vue'
     import Forecast from './components/Forecast/Forecast.vue'
 
     let componentsSelectsList = ref(JSON.parse(localStorage.getItem('componentsSelectsList') || '["Scene"]'))
 
+    document.body.classList.add('body')
     // console.log(JSON.parse(localStorage.getItem('componentsSelectsList') || '["Scene"]'))
     function isComponentShow(item: any) {
         localStorage.setItem('componentsSelectsList', JSON.stringify(componentsSelectsList.value))
         return componentsSelectsList.value.find((el: string) => el == item)
     }
+    onBeforeUnmount(() => {
+        document.body.classList.remove('body')
+    })
 </script>
 
-<style scoped></style>
+<style>
+    .body {
+        padding-top: 152px !important;
+    }
+    mdui-card {
+        margin-top: 10px;
+    }
+</style>
