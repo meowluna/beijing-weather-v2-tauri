@@ -28,7 +28,7 @@
 
         let currentRes = distrectSceneRes.value[distrect.value]
         if (currentRes == null) {
-            console.error('分区域数据部分缺失', currentRes)
+            console.error('分区数据部分缺失', currentRes)
             return
         }
         current = {

@@ -18,6 +18,7 @@
             </mdui-menu>
         </mdui-dropdown>
     </mdui-top-app-bar>
+    <mdui-linear-progress v-if="isLoading"></mdui-linear-progress>
     <Suspense><Scene v-if="isComponentShow('Scene')"></Scene></Suspense>
 
     <Suspense><Forecast v-if="isComponentShow('Forecast')"></Forecast></Suspense>
@@ -25,9 +26,14 @@
 </template>
 
 <script lang="ts" setup>
-    import { ref, onBeforeUnmount } from 'vue'
+    import { ref, onBeforeUnmount, onMounted } from 'vue'
     import Scene from './components/Scene/Scene.vue'
     import Forecast from './components/Forecast/Forecast.vue'
+
+    let isLoading = ref(true)
+    onMounted(() => {
+        isLoading.value = false
+    })
 
     let componentsSelectsList = ref(JSON.parse(localStorage.getItem('componentsSelectsList') || '["Scene"]'))
 
