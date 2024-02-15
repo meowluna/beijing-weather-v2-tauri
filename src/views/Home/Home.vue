@@ -1,6 +1,9 @@
 <template>
-    <mdui-top-app-bar variant="large">
-        <mdui-top-app-bar-title>京城气象</mdui-top-app-bar-title>
+    <mdui-top-app-bar variant="large" scroll-behavior="shrink elevate">
+        <mdui-top-app-bar-title>
+            京城气象
+            <mdui-badge>Alpha</mdui-badge>
+        </mdui-top-app-bar-title>
         <div style="flex-grow: 1"></div>
 
         <mdui-button-icon icon="refresh" onclick="location.reload()"></mdui-button-icon>
@@ -16,6 +19,7 @@
         </mdui-dropdown>
     </mdui-top-app-bar>
     <Suspense><Scene v-if="isComponentShow('Scene')"></Scene></Suspense>
+    <div style="height: 1000px"></div>
 </template>
 
 <script lang="ts" setup>

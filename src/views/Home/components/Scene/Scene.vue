@@ -45,7 +45,7 @@
                 ;(document.querySelector('mdui-tab')! as HTMLElement).click()
             } catch (error) {}
         })
-        console.log(scoreSelectsList.value.find((el: string) => el == item))
+        // console.log(scoreSelectsList.value.find((el: string) => el == item))
         localStorage.setItem('scoreSelectsList', JSON.stringify(scoreSelectsList.value))
         return scoreSelectsList.value.find((el: string) => el == item)
     }
