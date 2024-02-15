@@ -12,19 +12,21 @@
             <mdui-menu selects="multiple" :value="componentsSelectsList" @change="componentsSelectsList = $event.target.value">
                 <span style="font-size: var(--mdui-typescale-label-large-size)">视图组件:</span>
                 <mdui-menu-item value="Scene">实况</mdui-menu-item>
-                <mdui-menu-item value="Forcast">预报</mdui-menu-item>
+                <mdui-menu-item value="Forecast">预报</mdui-menu-item>
                 <mdui-menu-item value="Warning">预警</mdui-menu-item>
                 <mdui-menu-item value="Other">其他</mdui-menu-item>
             </mdui-menu>
         </mdui-dropdown>
     </mdui-top-app-bar>
     <Suspense><Scene v-if="isComponentShow('Scene')"></Scene></Suspense>
+    <Suspense><Forecast v-if="isComponentShow('Forecast')"></Forecast></Suspense>
     <div style="height: 1000px"></div>
 </template>
 
 <script lang="ts" setup>
     import { ref } from 'vue'
     import Scene from './components/Scene/Scene.vue'
+    import Forecast from './components/Forecast/Forecast.vue'
 
     let componentsSelectsList = ref(JSON.parse(localStorage.getItem('componentsSelectsList') || '["Scene"]'))
 

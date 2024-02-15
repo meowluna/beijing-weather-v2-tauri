@@ -1,7 +1,7 @@
 <template>
     <mdui-card style="position: relative; overflow: hidden; width: 100%">
         <mdui-top-app-bar ref="appBar">
-            <mdui-top-app-bar-title>实况</mdui-top-app-bar-title>
+            <mdui-top-app-bar-title>预报</mdui-top-app-bar-title>
             <div style="flex-grow: 1"></div>
             <mdui-dropdown stay-open-on-click>
                 <mdui-button-icon icon="more_vert" slot="trigger"></mdui-button-icon>
@@ -19,13 +19,9 @@
             <mdui-tabs>
                 <mdui-tab value="tab-1" v-if="isScoreShow('BMS')">北京气象台</mdui-tab>
                 <mdui-tab value="tab-2" v-if="isScoreShow('NMC')">中央气象台</mdui-tab>
-                <mdui-tab value="tab-3">Tab 3</mdui-tab>
-                <mdui-tab-panel slot="panel" value="tab-1">
-                    <BMS></BMS>
-                </mdui-tab-panel>
-                <mdui-tab-panel slot="panel" value="tab-2">
-                    <NMC></NMC>
-                </mdui-tab-panel>
+                <mdui-tab value="tab-3">Tab 322</mdui-tab>
+                <mdui-tab-panel slot="panel" value="tab-1"> Panel 1</mdui-tab-panel>
+                <mdui-tab-panel slot="panel" value="tab-2">Panel 3 </mdui-tab-panel>
                 <mdui-tab-panel slot="panel" value="tab-3">Panel 3</mdui-tab-panel>
             </mdui-tabs>
         </div>
@@ -35,12 +31,11 @@
 <script lang="ts" setup>
     import { nextTick } from 'vue'
     import { ref, onMounted } from 'vue'
-    import BMS from './components/BMS.vue'
-    import NMC from './components/NMC.vue'
-    let scoreSelectsList = ref(JSON.parse(localStorage.getItem('scoreSelectsList') || '["BMS"]'))
-
     let content = ref()
     let appBar = ref()
+    // import BMS from './components/BMS.vue'
+    // import NMC from './components/NMC.vue'
+    let scoreSelectsList = ref(JSON.parse(localStorage.getItem('scoreSelectsList') || '["BMS"]'))
     onMounted(() => {
         appBar.value.scrollTarget = content.value
         appBar.value.style.position = 'absolute'
