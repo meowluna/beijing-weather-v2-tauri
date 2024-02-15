@@ -6,7 +6,7 @@
             <mdui-dropdown stay-open-on-click>
                 <mdui-button-icon icon="more_vert" slot="trigger"></mdui-button-icon>
                 <mdui-menu selects="multiple" :value="scoreSelectsList" @change="scoreSelectsList = $event.target.value">
-                    数据源:
+                    <span style="font-size: var(--mdui-typescale-label-large-size)">数据源:</span>
                     <mdui-menu-item value="BMS">北京气象台</mdui-menu-item>
                     <mdui-menu-item value="Forcast">预报</mdui-menu-item>
                     <mdui-menu-item value="Warning">预警</mdui-menu-item>
@@ -59,5 +59,6 @@
     mdui-tabs::part(container) {
         background-color: rgb(var(--mdui-color-surface-container-low)) !important;
         margin-bottom: 10px;
+        white-space: nowrap;
     }
 </style>

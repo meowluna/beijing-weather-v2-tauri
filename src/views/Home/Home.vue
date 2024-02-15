@@ -10,7 +10,7 @@
         <mdui-dropdown stay-open-on-click>
             <mdui-button-icon icon="more_vert" slot="trigger"></mdui-button-icon>
             <mdui-menu selects="multiple" :value="componentsSelectsList" @change="componentsSelectsList = $event.target.value">
-                视图组件:
+                <span style="font-size: var(--mdui-typescale-label-large-size)">视图组件:</span>
                 <mdui-menu-item value="Scene">实况</mdui-menu-item>
                 <mdui-menu-item value="Forcast">预报</mdui-menu-item>
                 <mdui-menu-item value="Warning">预警</mdui-menu-item>
