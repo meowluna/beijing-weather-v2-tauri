@@ -1,5 +1,5 @@
 <template>
-    <mdui-top-app-bar variant="large" scroll-behavior="shrink">
+    <mdui-top-app-bar variant="large" scroll-behavior="shrink elevate">
         <mdui-top-app-bar-title> 其他 </mdui-top-app-bar-title>
     </mdui-top-app-bar>
     <mdui-list>
