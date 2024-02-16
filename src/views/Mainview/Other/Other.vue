@@ -13,7 +13,7 @@
     import { useRouter } from 'vue-router'
     const router = useRouter()
 
-    const navRouterList = ['setting']
+    const navRouterList = ['/other/setting']
     function navRouter(num: number) {
         router.push({ path: navRouterList[num] })
     }

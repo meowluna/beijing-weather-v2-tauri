@@ -26,7 +26,7 @@
 </template>
 
 <script lang="ts" setup>
-    import { ref, onBeforeUnmount, onMounted } from 'vue'
+    import { ref, onBeforeUnmount, onMounted, nextTick } from 'vue'
     import Scene from './components/Scene/Scene.vue'
     import Forecast from './components/Forecast/Forecast.vue'
 
@@ -35,7 +35,9 @@
 
     let isLoading = ref(true)
     onMounted(() => {
-        isLoading.value = false
+        nextTick(() => {
+            isLoading.value = false
+        })
     })
 
     let componentsSelectsList = ref(JSON.parse(localStorage.getItem('componentsSelectsList') || '["Scene"]'))

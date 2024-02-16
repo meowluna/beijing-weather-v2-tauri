@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
 import Home from "@/views/Mainview/Home/Home.vue";
 import Other from "@/views/Mainview/Other/Other.vue"
-import Setting from "@/views/Setting/Setting.vue"
+import Setting from "@/views/Mainview/Other/Setting/Setting.vue"
 
 import Mainview from "@/views/Mainview/Mainview.vue"
 
@@ -24,7 +24,7 @@ const router = createRouter({
 			]
 		},
 		{
-			path: '/setting',
+			path: '/other/setting',
 			component: Setting
 		}
 	]
