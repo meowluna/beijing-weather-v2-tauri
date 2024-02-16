@@ -1,4 +1,4 @@
-# 京城气象v2
+# 京城气象
 
 	项目v1.0：https://github.com/MiaoLuoNa/BJWeather
-BJWeather的重构版本
+BJWeather项目的V2的重构版本,使用vue3+mdui2构建
