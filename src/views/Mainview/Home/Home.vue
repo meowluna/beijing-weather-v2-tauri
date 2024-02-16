@@ -1,5 +1,5 @@
 <template>
-    <mdui-top-app-bar variant="large" scroll-behavior="shrink elevate">
+    <mdui-top-app-bar variant="large" scroll-behavior="shrink">
         <mdui-top-app-bar-title>
             京城气象
             <mdui-badge>Alpha</mdui-badge>
@@ -29,6 +29,9 @@
     import { ref, onBeforeUnmount, onMounted } from 'vue'
     import Scene from './components/Scene/Scene.vue'
     import Forecast from './components/Forecast/Forecast.vue'
+
+    import { useRouter } from 'vue-router'
+    const router = useRouter()
 
     let isLoading = ref(true)
     onMounted(() => {
