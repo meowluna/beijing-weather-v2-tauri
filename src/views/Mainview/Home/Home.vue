@@ -31,9 +31,9 @@
     import { ref, onBeforeUnmount, onMounted, nextTick } from 'vue'
     import Scene from './components/Scene/Scene.vue'
     import Forecast from './components/Forecast/Forecast.vue'
-
     import { useRouter } from 'vue-router'
     const router = useRouter()
+    defineOptions({ name: 'Home' })
 
     let isLoading = ref(true)
     onMounted(() => {

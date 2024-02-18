@@ -15,11 +15,17 @@ const router = createRouter({
 			children: [
 				{
 					path: 'home',
-					component: Home
+					component: Home,
+					// meta: {
+					// 	keepAlive: true,
+					// },
 				},
 				{
 					path: 'other',
-					component: Other
+					component: Other,
+					// meta: {
+					// 	keepAlive: true,
+					// },
 				},
 			]
 		},

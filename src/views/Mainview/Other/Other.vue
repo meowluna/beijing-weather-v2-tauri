@@ -12,6 +12,7 @@
 <script lang="ts" setup>
     import { useRouter } from 'vue-router'
     const router = useRouter()
+    defineOptions({ name: 'Other' })
 
     const navRouterList = ['/other/setting']
     function navRouter(num: number) {

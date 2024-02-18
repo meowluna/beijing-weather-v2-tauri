@@ -1,7 +1,6 @@
 <template>
     <h2>3小时预报</h2>
     <mdui-chip>发布时间{{ threeHours.datetime }}</mdui-chip>
-
     <div class="mdui-table">
         <table>
             <thead>
