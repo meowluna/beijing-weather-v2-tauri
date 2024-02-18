@@ -12,7 +12,7 @@
             <mdui-menu selects="multiple" :value="componentsSelectsList" @change="componentsSelectsList = $event.target.value">
                 <span style="font-size: var(--mdui-typescale-label-large-size)">视图组件:</span>
 
-                <mdui-menu-item v-for="(item, index) in componentsList" :key="index" :value="index.toString()">{{ item }}</mdui-menu-item>
+                <mdui-menu-item v-for="(item, index) in componentsList" :key="index" :value="index.toString()">{{ item.name }}</mdui-menu-item>
                 <!-- <mdui-menu-item value="Scene">实况</mdui-menu-item>
                 <mdui-menu-item value="Forecast">预报</mdui-menu-item>
                 <mdui-menu-item value="Warning">预警</mdui-menu-item>
@@ -21,9 +21,13 @@
         </mdui-dropdown>
     </mdui-top-app-bar>
     <mdui-linear-progress v-if="isLoading"></mdui-linear-progress>
-    <Suspense><Scene v-if="isComponentShow('0')"></Scene></Suspense>
+    <template v-for="(item, index) in componentsList" :key="index">
+        <Suspense><component :is="item.component" v-if="isComponentShow(index.toString())"></component></Suspense>
+    </template>
 
-    <Suspense><Forecast v-if="isComponentShow('1')"></Forecast></Suspense>
+    <!-- <Suspense><Scene v-if="isComponentShow('0')"></Scene></Suspense>
+
+    <Suspense><Forecast v-if="isComponentShow('1')"></Forecast></Suspense> -->
     <div style="height: 1000px"></div>
 </template>
 
@@ -31,6 +35,8 @@
     import { ref, onBeforeUnmount, onMounted, nextTick } from 'vue'
     import Scene from './components/Scene/Scene.vue'
     import Forecast from './components/Forecast/Forecast.vue'
+    import Warning from './components/Warning/Warning.vue'
+
     import { useRouter } from 'vue-router'
     const router = useRouter()
     defineOptions({ name: 'Home' })
@@ -42,7 +48,12 @@
         })
     })
 
-    let componentsList = ['实况', '预报', '预警', '其他']
+    let componentsList = [
+        { name: '实况', component: Scene },
+        { name: '预报', component: Forecast },
+        { name: '预警', component: Warning }
+        // { name: '其他', component: Scene }
+    ]
     let componentsSelectsList = ref(JSON.parse(localStorage.getItem('componentsSelectsList') || '["0"]'))
 
     document.body.classList.add('body')

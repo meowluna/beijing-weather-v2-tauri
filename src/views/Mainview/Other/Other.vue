@@ -3,7 +3,6 @@
         <mdui-top-app-bar-title> 其他 </mdui-top-app-bar-title>
     </mdui-top-app-bar>
     <mdui-list>
-        <!-- <mdui-list-subheader>Subheader</mdui-list-subheader> -->
         <mdui-list-item icon="settings" @click="navRouter(0)">设置</mdui-list-item>
         <mdui-list-item>Item 2</mdui-list-item>
     </mdui-list>

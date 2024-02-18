@@ -1,7 +1,7 @@
 <template>
     <mdui-card style="position: relative; overflow: hidden; width: 100%">
         <mdui-top-app-bar ref="appBar">
-            <mdui-top-app-bar-title>预报</mdui-top-app-bar-title>
+            <mdui-top-app-bar-title>预警</mdui-top-app-bar-title>
             <div style="flex-grow: 1"></div>
             <mdui-dropdown stay-open-on-click>
                 <mdui-button-icon icon="filter_list" slot="trigger"></mdui-button-icon>

@@ -16,16 +16,12 @@ const router = createRouter({
 				{
 					path: 'home',
 					component: Home,
-					// meta: {
-					// 	keepAlive: true,
-					// },
+					// meta: { keepAlive: true },
 				},
 				{
 					path: 'other',
 					component: Other,
-					// meta: {
-					// 	keepAlive: true,
-					// },
+					// meta: { keepAlive: true },
 				},
 			]
 		},
