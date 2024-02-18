@@ -16,7 +16,7 @@
 
 <script lang="ts" setup>
     import { ref } from 'vue'
-    import axios, { AxiosError } from 'axios'
+    import axios from 'axios'
     //分区实况
     const distrectSceneRes = (await axios.get('http://62.234.62.126:8001/bms?id=8')).data
     const forecastRes = (await axios.get('http://62.234.62.126:8001/bms?id=11')).data

@@ -13,12 +13,10 @@
 </template>
 
 <script lang="ts" setup>
-    import axios, { AxiosError } from 'axios'
+    import axios from 'axios'
     const forecastRes = (await axios.get('http://62.234.62.126:8001/nmc?stationid=54511')).data.data
-    console.log('天气预报：', forecastRes)
     let current = forecastRes.real
     let currentAQI = forecastRes.air
-    console.log('当前天气：', current.weather)
 </script>
 
 <style scoped></style>

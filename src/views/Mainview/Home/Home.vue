@@ -24,7 +24,7 @@
     <Suspense><Scene v-if="isComponentShow('0')"></Scene></Suspense>
 
     <Suspense><Forecast v-if="isComponentShow('1')"></Forecast></Suspense>
-    <div style="height: 500px"></div>
+    <div style="height: 1000px"></div>
 </template>
 
 <script lang="ts" setup>
