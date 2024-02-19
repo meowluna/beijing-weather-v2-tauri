@@ -10,28 +10,28 @@
     </div>
     <mdui-divider></mdui-divider>
     <div class="subitem">
-        <img src="/env-icon/jiangyuliang.svg" />
+        <img src="@/assets/env-icon/jiangyuliang.svg" />
         <div>
             降水量:{{ current.jiangshuiliang }}mm
             <mdui-linear-progress :value="current.jiangshuiliang" max="250"></mdui-linear-progress>
         </div>
     </div>
     <div class="subitem">
-        <img src="/env-icon/fengsu.svg" />
+        <img src="@/assets/env-icon/fengsu.svg" />
         <div>
             风速:{{ current.windspeed }}m/s • 风向:{{ current.winddirection }}°
             <mdui-linear-progress :value="current.windspeed" max="24.5"></mdui-linear-progress>
         </div>
     </div>
     <div class="subitem">
-        <img src="/env-icon/yali.svg" />
+        <img src="@/assets/env-icon/yali.svg" />
         <div>
             气压:{{ current.airpressure }}hPa
             <mdui-linear-progress :value="current.airpressure - 950" max="100"></mdui-linear-progress>
         </div>
     </div>
     <div class="subitem">
-        <img src="/env-icon/kongqishidu.svg" />
+        <img src="@/assets/env-icon/kongqishidu.svg" />
         <div>
             相对湿度:{{ current.humidity }}%
             <mdui-linear-progress :value="current.humidity" max="100"></mdui-linear-progress>
@@ -103,7 +103,7 @@
             current.weather = JSON.parse(forecastRes.Scene).value.name
             let iconPath = getWeatherIcon(current.weather)
             if (iconPath != false) {
-                current.weatherIcon = new URL('/weather-icon/' + iconPath + '.svg', import.meta.url).href
+                current.weatherIcon = new URL(`/src/assets/weather-icon/${iconPath}.svg`, import.meta.url).href
             }
         }
     }

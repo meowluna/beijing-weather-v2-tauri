@@ -68,6 +68,6 @@
     }
     mdui-tab-panel {
         width: 96%;
-        margin: 1% 2% 0 2%;
+        margin: 1% 2% 2% 2%;
     }
 </style>
