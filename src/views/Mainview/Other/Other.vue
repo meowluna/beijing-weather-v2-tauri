@@ -4,7 +4,7 @@
     </mdui-top-app-bar>
     <mdui-list>
         <mdui-list-item icon="settings" @click="navRouter(0)">设置</mdui-list-item>
-        <mdui-list-item>Item 2</mdui-list-item>
+        <mdui-list-item icon="info">关于</mdui-list-item>
     </mdui-list>
 </template>
 

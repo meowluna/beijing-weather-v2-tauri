@@ -1,6 +1,5 @@
 <template>
     <p>3小时预报</p>
-    <mdui-chip>发布时间{{ threeHours.datetime }}</mdui-chip>
     <div class="mdui-table">
         <table>
             <thead>
@@ -23,9 +22,10 @@
             </tbody>
         </table>
     </div>
+    <mdui-chip>发布时间{{ threeHours.datetime }}</mdui-chip>
+    <mdui-divider></mdui-divider>
 
     <p>36小时预报</p>
-    <mdui-chip>发布时间{{ thirtysixHoursDateTime }}</mdui-chip>
     <div class="mdui-table">
         <table>
             <thead>
@@ -50,6 +50,8 @@
             </tbody>
         </table>
     </div>
+    <mdui-chip>发布时间{{ thirtysixHoursDateTime }}</mdui-chip>
+    <mdui-divider></mdui-divider>
 
     <p>7天预报</p>
     <div class="mdui-table">
@@ -107,7 +109,7 @@
 <style scoped>
     .mdui-table {
         width: unset;
-        margin-top: 2px !important;
+        margin: 5px 0 5px 0 !important;
     }
     table {
         white-space: nowrap;

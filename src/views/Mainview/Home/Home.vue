@@ -2,7 +2,7 @@
     <mdui-top-app-bar variant="large" scroll-behavior="shrink elevate">
         <mdui-top-app-bar-title>
             京城气象
-            <mdui-badge>Alpha</mdui-badge>
+            <mdui-badge>Beta</mdui-badge>
         </mdui-top-app-bar-title>
         <div style="flex-grow: 1"></div>
 
