@@ -13,10 +13,6 @@
                 <span style="font-size: var(--mdui-typescale-label-large-size)">视图组件:</span>
 
                 <mdui-menu-item v-for="(item, index) in componentsList" :key="index" :value="index.toString()">{{ item.name }}</mdui-menu-item>
-                <!-- <mdui-menu-item value="Scene">实况</mdui-menu-item>
-                <mdui-menu-item value="Forecast">预报</mdui-menu-item>
-                <mdui-menu-item value="Warning">预警</mdui-menu-item>
-                <mdui-menu-item value="Other">其他</mdui-menu-item> -->
             </mdui-menu>
         </mdui-dropdown>
     </mdui-top-app-bar>
@@ -24,11 +20,6 @@
     <template v-for="(item, index) in componentsList" :key="index">
         <Suspense><component :is="item.component" v-if="isComponentShow(index.toString())"></component></Suspense>
     </template>
-
-    <!-- <Suspense><Scene v-if="isComponentShow('0')"></Scene></Suspense>
-
-    <Suspense><Forecast v-if="isComponentShow('1')"></Forecast></Suspense> -->
-    <div style="height: 1000px"></div>
 </template>
 
 <script lang="ts" setup>
@@ -72,6 +63,11 @@
         padding-top: 152px !important;
     }
     mdui-card {
-        margin-top: 10px;
+        width: 96%;
+        margin: 0 2% 2% 2%;
+    }
+    mdui-tab-panel {
+        width: 96%;
+        margin: 1% 2% 0 2%;
     }
 </style>

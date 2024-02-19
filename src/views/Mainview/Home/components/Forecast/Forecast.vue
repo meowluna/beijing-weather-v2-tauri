@@ -1,5 +1,5 @@
 <template>
-    <mdui-card style="position: relative; overflow: hidden; width: 100%">
+    <mdui-card style="position: relative; overflow: hidden">
         <mdui-top-app-bar ref="appBar">
             <mdui-top-app-bar-title>预报</mdui-top-app-bar-title>
             <div style="flex-grow: 1"></div>
