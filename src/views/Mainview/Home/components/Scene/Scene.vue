@@ -48,7 +48,7 @@
         { name: '北京气象台', component: BMS }
         // { name: '中央气象台', component: NMC }
     ]
-    let sourceSelectsList = ref(JSON.parse(localStorage.getItem(instance!.type.name + '_sourceSelectsList') || '[0]'))
+    let sourceSelectsList = ref(JSON.parse(localStorage.getItem(instance!.type.name + '_sourceSelectsList') || '["0"]'))
     function isSourceShow(item?: string) {
         nextTick(() => {
             try {
