@@ -26,7 +26,7 @@
 </template>
 
 <script lang="ts" setup>
-    let appInfo = JSON.parse(localStorage.getItem('appInfo'))
+    let appInfo = JSON.parse(localStorage.getItem('appInfo')!)
 </script>
 
 <style scoped></style>

@@ -17,7 +17,7 @@
     import { ref, watch } from 'vue'
     import emitter from '@/utils/emitter'
 
-    let isAutoDarkMode = ref(JSON.parse(localStorage.getItem('Settings_autoDarkMode') || 'true'))
+    let isAutoDarkMode = ref(JSON.parse(localStorage.getItem('Settings_autoDarkMode') || 'false'))
     watch(
         isAutoDarkMode,
         value => {
