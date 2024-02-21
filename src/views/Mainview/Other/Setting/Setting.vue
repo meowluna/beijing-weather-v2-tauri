@@ -6,8 +6,8 @@
     <mdui-list>
         <mdui-list-subheader>显示</mdui-list-subheader>
         <mdui-list-item nonclickable>
-            自动夜间模式
-            <span slot="description">*跟随时间设定</span>
+            自动暗色模式
+            <span slot="description">跟随时间设定(18点-6点)</span>
             <mdui-switch checked-icon="" slot="end-icon" :checked="isAutoDarkMode" @change="isAutoDarkMode = $event.target.checked"></mdui-switch>
         </mdui-list-item>
     </mdui-list>
@@ -17,7 +17,7 @@
     import { ref, watch } from 'vue'
     import emitter from '@/utils/emitter'
 
-    let isAutoDarkMode = ref(JSON.parse(localStorage.getItem('Settings_autoDarkMode') || 'false'))
+    let isAutoDarkMode = ref(JSON.parse(localStorage.getItem('Settings_autoDarkMode') || 'true'))
     watch(
         isAutoDarkMode,
         value => {

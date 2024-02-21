@@ -4,7 +4,7 @@
     </mdui-top-app-bar>
     <mdui-list>
         <mdui-list-item icon="settings" @click="navRouter(0)">设置</mdui-list-item>
-        <mdui-list-item icon="info">关于</mdui-list-item>
+        <mdui-list-item icon="info" @click="navRouter(1)">关于</mdui-list-item>
     </mdui-list>
 </template>
 
@@ -13,7 +13,7 @@
     const router = useRouter()
     defineOptions({ name: 'Other' })
 
-    const navRouterList = ['/other/setting']
+    const navRouterList = ['/other/setting', '/other/about']
     function navRouter(num: number) {
         router.push({ path: navRouterList[num] })
     }

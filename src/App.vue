@@ -22,6 +22,15 @@
             setInterval(toggleDarkMode, 5 * 60 * 1000) //5分钟检查一下，可以实现不刷新页面切换
         }
     }
+
+    let appInfo = {
+        version: {
+            name: '0.1.0_beta',
+            code: 1
+        },
+        buildTime: '2024-02-21'
+    }
+    localStorage.setItem('appInfo', JSON.stringify(appInfo))
 </script>
 
 <style scoped></style>
