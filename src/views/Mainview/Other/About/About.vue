@@ -18,7 +18,7 @@
             <span slot="description">{{ appInfo.buildTime }}</span>
         </mdui-list-item>
         <mdui-divider></mdui-divider>
-        <mdui-list-item onclick="window.location.href='https://github.com/MiaoLuoNa/beijing-weather-v2'">
+        <mdui-list-item nonclickable>
             项目地址
             <span slot="description">https://github.com/MiaoLuoNa/beijing-weather-v2</span>
         </mdui-list-item>

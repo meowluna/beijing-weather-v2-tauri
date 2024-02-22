@@ -3,32 +3,12 @@
 </template>
 
 <script lang="ts" setup>
-    import emitter from '@/utils/emitter'
-
-    function toggleDarkMode() {
-        const hour = new Date().getHours()
-        const isDarkModeTime = hour >= 18 || hour < 6
-        // const isDarkModeTime = true
-        if (isDarkModeTime) {
-            document.getElementsByTagName('html')[0].classList.add('mdui-theme-dark')
-        } else {
-            document.getElementsByTagName('html')[0].classList.remove('mdui-theme-dark')
-        }
-    }
-    emitter.on('toggleDarkMode', toggleDarkMode)
-    if (localStorage.getItem('Settings_autoDarkMode') != undefined) {
-        if (JSON.parse(localStorage.getItem('Settings_autoDarkMode')!) == true) {
-            toggleDarkMode()
-            setInterval(toggleDarkMode, 5 * 60 * 1000) //5分钟检查一下，可以实现不刷新页面切换
-        }
-    }
-
     let appInfo = {
         version: {
-            name: '0.1.0_beta',
-            code: 1
+            name: '0.1.1-beta',
+            code: 2
         },
-        buildTime: '2024-02-21'
+        buildTime: '2024-02-22'
     }
     localStorage.setItem('appInfo', JSON.stringify(appInfo))
 </script>
