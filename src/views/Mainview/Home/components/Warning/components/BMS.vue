@@ -7,6 +7,7 @@
             </mdui-collapse-item>
         </mdui-collapse>
     </mdui-list>
+    <span v-if="noWarning">暂无预警信息</span>
 </template>
 
 <script lang="ts" setup>
@@ -19,7 +20,6 @@
     let warningList: any = []
     let warningData: any = []
     warningListTemp = warningListTemp.reverse()
-    console.log('处理过', warningListTemp)
     for (let item in warningListTemp) {
         if (warningListTemp[item].title.substr(3, 2) == '解除') {
             isWarningExpired[warningListTemp[item].title.substr(5, 2)] = true
@@ -35,6 +35,7 @@
         }
     }
 
+    let noWarning: any
     if (warningList.length != 0) {
         let temp: any = []
         for (let item in warningList) {
@@ -59,6 +60,8 @@
                 console.log(warningTemp)
             }
         }
+    } else {
+        noWarning = true
     }
 </script>
 
