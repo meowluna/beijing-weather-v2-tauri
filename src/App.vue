@@ -10,8 +10,8 @@
 <script lang="ts" setup>
     let appInfo = {
         version: {
-            name: '0.2.0-beta',
-            code: 3
+            name: '0.2.1-beta',
+            code: 4
         },
         buildTime: '2024-03-02'
     }
