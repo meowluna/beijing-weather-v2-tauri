@@ -27,6 +27,7 @@
     import Scene from './components/Scene/Scene.vue'
     import Forecast from './components/Forecast/Forecast.vue'
     import Warning from './components/Warning/Warning.vue'
+    import Other from './components/Other/Other.vue'
 
     import { useRouter } from 'vue-router'
     const router = useRouter()
@@ -42,8 +43,8 @@
     let componentsList = [
         { name: '实况', component: Scene },
         { name: '预报', component: Forecast },
-        { name: '预警', component: Warning }
-        // { name: '其他', component: Scene }
+        { name: '预警', component: Warning },
+        { name: '其他', component: Other }
     ]
     let componentsSelectsList = ref(JSON.parse(localStorage.getItem('componentsSelectsList') || '["0"]'))
 
