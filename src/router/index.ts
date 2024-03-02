@@ -17,14 +17,13 @@ const router = createRouter({
 				{
 					path: 'home',
 					component: Home,
-					// meta: { keepAlive: true },
 				},
 				{
 					path: 'other',
 					component: Other,
-					// meta: { keepAlive: true },
 				},
-			]
+			],
+			meta: { keepAlive: true },
 		},
 		{
 			path: '/other',
@@ -36,8 +35,8 @@ const router = createRouter({
 					path: 'about',
 					component: About
 				}
-			]
-
+			],
+			meta: { keepAlive: true },
 		}
 	]
 })
