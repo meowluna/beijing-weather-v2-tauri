@@ -9,6 +9,7 @@
 
     <p>天气预报</p>
     <video :src="video.src" controls style="max-width: 100%"></video>
+    <mdui-chip>发布时间{{ video.datetime }}</mdui-chip>
 </template>
 
 <script lang="ts" setup>
@@ -29,7 +30,8 @@
 
     let videoRes: any = (await axios.get('http://62.234.62.126:8001/bms/video')).data.value
     let video = {
-        src: 'http://101.200.145.109:8087/qxj/' + videoRes[0].videopath
+        src: 'http://101.200.145.109:8087/qxj/' + videoRes[0].videopath,
+        datetime: videoRes[0].videodate
     }
 </script>
 

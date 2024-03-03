@@ -1,83 +1,93 @@
 <template>
-    <p>3小时预报</p>
-    <div class="mdui-table">
-        <table>
-            <thead>
-                <tr>
-                    <th>时间</th>
-                    <th>天气</th>
-                    <th>气温</th>
-                    <th>风力</th>
-                    <th>风向</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="(item, index) in threeHours.value" :key="item.hour">
-                    <td>{{ index }}</td>
-                    <td>{{ item.wp }}</td>
-                    <td>{{ item.t }}℃</td>
-                    <td>{{ item.wspeed }}</td>
-                    <td>{{ item.wdir }}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <mdui-chip>发布时间{{ threeHours.datetime }}</mdui-chip>
-    <mdui-divider></mdui-divider>
+    <mdui-collapse accordion>
+        <mdui-collapse-item>
+            <mdui-list-item slot="header">3小时预报</mdui-list-item>
+            <div class="mdui-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>时间</th>
+                            <th>天气</th>
+                            <th>气温</th>
+                            <th>风力</th>
+                            <th>风向</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(item, index) in threeHours.value" :key="item.hour">
+                            <td>{{ index }}</td>
+                            <td>{{ item.wp }}</td>
+                            <td>{{ item.t }}℃</td>
+                            <td>{{ item.wspeed }}</td>
+                            <td>{{ item.wdir }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <mdui-chip>发布时间{{ threeHours.datetime }}</mdui-chip>
+        </mdui-collapse-item>
+    </mdui-collapse>
 
-    <p>36小时预报</p>
-    <div class="mdui-table">
-        <table>
-            <thead>
-                <tr>
-                    <th>时间</th>
-                    <th>天气</th>
-                    <th>气温</th>
-                    <th>风力</th>
-                    <th>风向</th>
-                    <th>相对湿度</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="(item, index) in thirtysixHours" :key="item.lv">
-                    <td>{{ item.date }}</td>
-                    <td>{{ item.weather }}</td>
-                    <td>{{ item.plain_temp }}</td>
-                    <td>{{ item.windspeed }}</td>
-                    <td>{{ item.wind }}</td>
-                    <td>{{ item.other }}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <mdui-chip>发布时间{{ thirtysixHoursDateTime }}</mdui-chip>
-    <mdui-divider></mdui-divider>
+    <mdui-collapse accordion>
+        <mdui-collapse-item>
+            <mdui-list-item slot="header">36小时预报</mdui-list-item>
+            <div class="mdui-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>时间</th>
+                            <th>天气</th>
+                            <th>气温</th>
+                            <th>风力</th>
+                            <th>风向</th>
+                            <th>相对湿度</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(item, index) in thirtysixHours" :key="item.lv">
+                            <td>{{ item.date }}</td>
+                            <td>{{ item.weather }}</td>
+                            <td>{{ item.plain_temp }}</td>
+                            <td>{{ item.windspeed }}</td>
+                            <td>{{ item.wind }}</td>
+                            <td>{{ item.other }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <mdui-chip>发布时间{{ thirtysixHoursDateTime }}</mdui-chip>
+        </mdui-collapse-item>
+    </mdui-collapse>
 
-    <p>7天预报</p>
-    <div class="mdui-table">
-        <table>
-            <thead>
-                <tr>
-                    <th>日期</th>
-                    <th>时段</th>
-                    <th>天气</th>
-                    <th>气温</th>
-                    <th>风力</th>
-                    <th>风向</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="(item, index) in sevenDaysRes" :key="item.lv">
-                    <td>{{ item.time }}</td>
-                    <td>{{ item.Nighttime }}</td>
-                    <td>{{ item.condition }}</td>
-                    <td>{{ item.temperature }}</td>
-                    <td>{{ item.windscale }}</td>
-                    <td>{{ item.winddirection }}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <mdui-collapse accordion>
+        <mdui-collapse-item>
+            <mdui-list-item slot="header">7天预报</mdui-list-item>
+            <div class="mdui-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>日期</th>
+                            <th>时段</th>
+                            <th>天气</th>
+                            <th>气温</th>
+                            <th>风力</th>
+                            <th>风向</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(item, index) in sevenDaysRes" :key="item.lv">
+                            <td>{{ item.time }}</td>
+                            <td>{{ item.Nighttime }}</td>
+                            <td>{{ item.condition }}</td>
+                            <td>{{ item.temperature }}</td>
+                            <td>{{ item.windscale }}</td>
+                            <td>{{ item.winddirection }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </mdui-collapse-item>
+    </mdui-collapse>
 </template>
 
 <script lang="ts" setup>
