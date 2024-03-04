@@ -26,9 +26,7 @@
             </div>
             <mdui-chip>发布时间{{ threeHours.datetime }}</mdui-chip>
         </mdui-collapse-item>
-    </mdui-collapse>
 
-    <mdui-collapse accordion>
         <mdui-collapse-item>
             <mdui-list-item slot="header">36小时预报</mdui-list-item>
             <div class="mdui-table">
@@ -57,9 +55,7 @@
             </div>
             <mdui-chip>发布时间{{ thirtysixHoursDateTime }}</mdui-chip>
         </mdui-collapse-item>
-    </mdui-collapse>
 
-    <mdui-collapse accordion>
         <mdui-collapse-item>
             <mdui-list-item slot="header">7天预报</mdui-list-item>
             <div class="mdui-table">
@@ -105,7 +101,6 @@
     for (let item in temp.value) {
         thirtysixHours[temp.value[item].lv] = temp.value[item]
     }
-    // console.log(thirtysixHours)
     //7d
     const sevenDaysRes = (await axios.get('http://62.234.62.126:8001/bms?id=10')).data
     for (let item in sevenDaysRes) {

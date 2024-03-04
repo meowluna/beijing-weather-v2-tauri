@@ -60,14 +60,4 @@
     }
 </script>
 
-<style scoped>
-    mdui-top-app-bar {
-        z-index: 1999;
-        background-color: rgb(var(--mdui-color-surface-container-low)) !important;
-    }
-    mdui-tabs::part(container) {
-        background-color: rgb(var(--mdui-color-surface-container-low)) !important;
-        margin-bottom: 10px;
-        white-space: nowrap;
-    }
-</style>
+<style src="/src/assets/css/homePageCommon.css" scoped></style>

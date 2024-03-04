@@ -1,22 +1,21 @@
 <template>
     <p>卫星云图</p>
-    <img :src="cloud.fileName" style="max-width: 100%" />
+    <img :src="cloud.fileName" />
     <mdui-chip>发布时间{{ cloud.datatime }}</mdui-chip>
 
     <p>雷达图</p>
-    <img style="max-width: 100%" :src="radar.img" />
+    <img :src="radar.img" />
     <mdui-chip>发布时间{{ radar.datetime }}</mdui-chip>
 
     <p>天气预报</p>
-    <video :src="video.src" controls style="max-width: 100%"></video>
+    <video :src="video.src" controls></video>
     <mdui-chip>发布时间{{ video.datetime }}</mdui-chip>
 </template>
 
 <script lang="ts" setup>
     import axios from 'axios'
-    import { ref } from 'vue'
+
     let cloudRes: any = (await axios.get('http://62.234.62.126:8001/bms?id=5')).data
-    console.log(cloudRes)
     let cloud = {
         fileName: 'http://101.200.145.109:8087/qxj/' + cloudRes.fileName,
         datatime: cloudRes.datatime
@@ -35,4 +34,9 @@
     }
 </script>
 
-<style scoped></style>
+<style scoped>
+    img,
+    video {
+        max-width: 100%;
+    }
+</style>
