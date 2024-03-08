@@ -87,13 +87,11 @@
 </template>
 
 <script lang="ts" setup>
-    import { ref } from 'vue'
     import axios from 'axios'
     const forecastRes = (await axios.get('http://62.234.62.126:8001/bms?id=11')).data
 
     //3小时
     let threeHours = JSON.parse(forecastRes.ThreeHours)
-    // console.log(threeHours)
     //36小时
     let temp = JSON.parse(forecastRes.thirtysix)
     let thirtysixHoursDateTime = temp.datetime

@@ -11,7 +11,6 @@
 </template>
 
 <script lang="ts" setup>
-    import { ref } from 'vue'
     import axios from 'axios'
     const warningListRes = await axios.get('http://62.234.62.126:8001/bms/warning')
     console.log(warningListRes)
@@ -63,6 +62,8 @@
     } else {
         noWarning = true
     }
+
+    console.log(111)
 </script>
 
 <style scoped></style>

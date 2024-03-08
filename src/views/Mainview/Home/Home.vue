@@ -49,7 +49,6 @@
     let componentsSelectsList = ref(JSON.parse(localStorage.getItem('componentsSelectsList') || '["0"]'))
 
     document.body.classList.add('body')
-    // console.log(JSON.parse(localStorage.getItem('componentsSelectsList') || '["Scene"]'))
     function isComponentShow(item: string) {
         localStorage.setItem('componentsSelectsList', JSON.stringify(componentsSelectsList.value))
         return componentsSelectsList.value.find((el: string) => el == item) != undefined ? true : false

@@ -18,7 +18,6 @@
     function toggleDarkMode() {
         const hour = new Date().getHours()
         const isDarkModeTime = hour >= 18 || hour < 6
-        // const isDarkModeTime = true
         if (isDarkModeTime) {
             document.getElementsByTagName('html')[0].classList.add('mdui-theme-dark')
         } else {
