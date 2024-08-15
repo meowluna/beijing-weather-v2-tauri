@@ -58,4 +58,4 @@
     }
 </script>
 
-<style src="/src/assets/css/homePage.css" scoped></style>
+<style src="/src/styles/homePage.css" scoped></style>

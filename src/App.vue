@@ -10,7 +10,9 @@
 
 <script lang="ts" setup>
     import { useRouter } from 'vue-router'
+    import { routerTransition } from '@/hooks/useRouterTransition'
     const router = useRouter()
+    routerTransition(router)
 
     const appInfo = {
         version: {
@@ -20,21 +22,9 @@
         buildTime: '2024-03-03'
     }
     localStorage.setItem('appInfo', JSON.stringify(appInfo))
-
-    router.afterEach((to, from) => {
-        const toDepth = to.path.split('/').length
-        const fromDepth = from.path.split('/').length
-        if (toDepth == fromDepth || from.path == '/') {
-            to.meta.transition = 'fade'
-        } else if (toDepth < fromDepth) {
-            to.meta.transition = 'slide-right'
-        } else if (toDepth > fromDepth) {
-            to.meta.transition = 'slide-left'
-        }
-    })
 </script>
 
-<style src="/src/assets/css/transition.css"></style>
+<style src="/src/styles/transition.css"></style>
 
 <style>
     body {

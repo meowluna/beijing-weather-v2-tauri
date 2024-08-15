@@ -22,9 +22,3 @@
         level == 1 ? router.push({ path: navRouterList[num] }) : router.replace({ path: navRouterList[num] })
     }
 </script>
-
-<style>
-    /* .body {
-        padding-top: 0px !important;
-    } */
-</style>

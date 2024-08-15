@@ -16,21 +16,12 @@
 
 <script lang="ts" setup>
     import { useRouter } from 'vue-router'
+    import { routerTransition } from '@/hooks/useRouterTransition'
     const router = useRouter()
+    routerTransition(router)
+
     const navRouterList = ['/home', '/other']
     function navRouter(num: number) {
         router.push({ path: navRouterList[num] })
     }
-
-    router.afterEach((to, from) => {
-        const toDepth = to.path.split('/').length
-        const fromDepth = from.path.split('/').length
-        if (toDepth < fromDepth) {
-            to.meta.transition = 'slide-right'
-        } else if (toDepth > fromDepth) {
-            to.meta.transition = 'slide-left'
-        } else {
-            to.meta.transition = 'fade'
-        }
-    })
 </script>
