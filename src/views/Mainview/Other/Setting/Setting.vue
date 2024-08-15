@@ -1,16 +1,18 @@
 <template>
-    <mdui-top-app-bar variant="large" scroll-behavior="shrink elevate">
-        <mdui-button-icon icon="arrow_back" onclick="window.history.back()"></mdui-button-icon>
-        <mdui-top-app-bar-title> 设置 </mdui-top-app-bar-title>
-    </mdui-top-app-bar>
-    <mdui-list>
-        <mdui-list-subheader>显示</mdui-list-subheader>
-        <mdui-list-item nonclickable>
-            自动暗色模式
-            <span slot="description">跟随时间设定(18点-6点)</span>
-            <mdui-switch checked-icon="" slot="end-icon" :checked="isAutoDarkMode" @change="isAutoDarkMode = $event.target.checked"></mdui-switch>
-        </mdui-list-item>
-    </mdui-list>
+    <div>
+        <mdui-top-app-bar variant="large" scroll-behavior="shrink elevate">
+            <mdui-button-icon icon="arrow_back" onclick="window.history.back()"></mdui-button-icon>
+            <mdui-top-app-bar-title> 设置 </mdui-top-app-bar-title>
+        </mdui-top-app-bar>
+        <mdui-list>
+            <mdui-list-subheader>显示</mdui-list-subheader>
+            <mdui-list-item nonclickable>
+                自动暗色模式
+                <span slot="description">跟随时间设定(18点-6点)</span>
+                <mdui-switch checked-icon="" slot="end-icon" :checked="isAutoDarkMode" @change="isAutoDarkMode = $event.target.checked"></mdui-switch>
+            </mdui-list-item>
+        </mdui-list>
+    </div>
 </template>
 
 <script lang="ts" setup>

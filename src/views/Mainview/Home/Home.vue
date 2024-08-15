@@ -1,25 +1,27 @@
 <template>
-    <mdui-top-app-bar variant="large" scroll-behavior="shrink elevate">
-        <mdui-top-app-bar-title>
-            京城气象
-            <mdui-badge>Beta</mdui-badge>
-        </mdui-top-app-bar-title>
-        <div style="flex-grow: 1"></div>
+    <div>
+        <mdui-top-app-bar variant="large" scroll-behavior="shrink elevate">
+            <mdui-top-app-bar-title>
+                京城气象
+                <mdui-badge>Beta</mdui-badge>
+            </mdui-top-app-bar-title>
+            <div style="flex-grow: 1"></div>
 
-        <mdui-button-icon icon="refresh" onclick="location.reload()"></mdui-button-icon>
-        <mdui-dropdown stay-open-on-click>
-            <mdui-button-icon icon="more_vert" slot="trigger"></mdui-button-icon>
-            <mdui-menu selects="multiple" :value="componentsSelectsList" @change="componentsSelectsList = $event.target.value">
-                <span style="font-size: var(--mdui-typescale-label-large-size)">视图组件:</span>
+            <mdui-button-icon icon="refresh" onclick="location.reload()"></mdui-button-icon>
+            <mdui-dropdown stay-open-on-click>
+                <mdui-button-icon icon="more_vert" slot="trigger"></mdui-button-icon>
+                <mdui-menu selects="multiple" :value="componentsSelectsList" @change="componentsSelectsList = $event.target.value">
+                    <span style="font-size: var(--mdui-typescale-label-large-size)">视图组件:</span>
 
-                <mdui-menu-item v-for="(item, index) in componentsList" :key="index" :value="index.toString()">{{ item.name }}</mdui-menu-item>
-            </mdui-menu>
-        </mdui-dropdown>
-    </mdui-top-app-bar>
-    <mdui-linear-progress v-if="isLoading"></mdui-linear-progress>
-    <template v-for="(item, index) in componentsList" :key="index">
-        <Suspense><component :is="item.component" v-if="isComponentShow(index.toString())"></component></Suspense>
-    </template>
+                    <mdui-menu-item v-for="(item, index) in componentsList" :key="index" :value="index.toString()">{{ item.name }}</mdui-menu-item>
+                </mdui-menu>
+            </mdui-dropdown>
+        </mdui-top-app-bar>
+        <mdui-linear-progress v-if="isLoading"></mdui-linear-progress>
+        <template v-for="(item, index) in componentsList" :key="index">
+            <Suspense><component :is="item.component" v-if="isComponentShow(index.toString())"></component></Suspense>
+        </template>
+    </div>
 </template>
 
 <script lang="ts" setup>
@@ -32,6 +34,11 @@
     import { useRouter } from 'vue-router'
     const router = useRouter()
     defineOptions({ name: 'Home' })
+
+    const navRouterList = ['/home', '/other']
+    function navRouter(num: number) {
+        router.push({ path: navRouterList[num] })
+    }
 
     let isLoading = ref(true)
     onMounted(() => {
@@ -59,9 +66,9 @@
 </script>
 
 <style>
-    .body {
+    /* .body {
         padding-top: 152px !important;
-    }
+    } */
     mdui-card {
         width: 96%;
         margin: 0 2% 2% 2%;
@@ -69,5 +76,8 @@
     mdui-tab-panel {
         width: 96%;
         margin: 1% 2% 2% 2%;
+    }
+    body {
+        margin: 0 0 0 0 !important;
     }
 </style>

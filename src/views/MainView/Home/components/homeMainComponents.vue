@@ -1,6 +1,6 @@
 <template>
     <mdui-card style="position: relative; overflow: hidden">
-        <mdui-top-app-bar ref="appBar">
+        <mdui-top-app-bar ref="appBar" scroll-target=".content">
             <mdui-top-app-bar-title>{{ homeComponentTitle }}</mdui-top-app-bar-title>
             <div style="flex-grow: 1"></div>
             <mdui-dropdown stay-open-on-click>
@@ -12,7 +12,7 @@
             </mdui-dropdown>
         </mdui-top-app-bar>
 
-        <div ref="content">
+        <div ref="content" class="content">
             <mdui-tabs>
                 <template v-for="(item, index) in sourceList">
                     <mdui-tab :key="index" :value="index.toString()" v-if="isSourceShow(index.toString())">{{ item.name }}</mdui-tab>
@@ -28,8 +28,8 @@
 <script lang="ts" setup>
     import { ref, onMounted, defineAsyncComponent, nextTick } from 'vue'
 
-    let props: any = defineProps(['homeCommonComponentsData'])
-    props = props.homeCommonComponentsData
+    let props: any = defineProps(['homeMainComponentsData'])
+    props = props.homeMainComponentsData
     let sourceList: any = []
     let homeComponentTitle = props.title
     for (let index = 0; index < props.sourceList.length; index++) {
@@ -41,8 +41,6 @@
     let content = ref()
     let appBar = ref()
     onMounted(() => {
-        appBar.value.scrollTarget = content.value
-        appBar.value.style.position = 'absolute'
         try {
             ;(content.value.querySelector('mdui-tab')! as HTMLElement).click()
         } catch (error) {}
@@ -60,4 +58,4 @@
     }
 </script>
 
-<style src="/src/assets/css/homePageCommon.css" scoped></style>
+<style src="/src/assets/css/homePage.css" scoped></style>
