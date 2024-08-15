@@ -1,7 +1,7 @@
 <template>
     <div>
         <mdui-top-app-bar variant="large" scroll-behavior="shrink elevate">
-            <mdui-button-icon icon="arrow_back" onclick="window.history.back()"></mdui-button-icon>
+            <mdui-button-icon icon="arrow_back" @click="router.back()"></mdui-button-icon>
             <mdui-top-app-bar-title> 设置 </mdui-top-app-bar-title>
         </mdui-top-app-bar>
         <mdui-list>
@@ -17,6 +17,9 @@
 
 <script lang="ts" setup>
     import { ref, watch } from 'vue'
+    import { useRouter } from 'vue-router'
+    const router = useRouter()
+
     function toggleDarkMode() {
         const hour = new Date().getHours()
         const isDarkModeTime = hour >= 18 || hour < 6

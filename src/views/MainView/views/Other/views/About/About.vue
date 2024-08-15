@@ -1,7 +1,7 @@
 <template>
     <div>
         <mdui-top-app-bar variant="large" scroll-behavior="shrink elevate">
-            <mdui-button-icon icon="arrow_back" onclick="window.history.back()"></mdui-button-icon>
+            <mdui-button-icon icon="arrow_back" @click="router.back()"></mdui-button-icon>
             <mdui-top-app-bar-title> 关于 </mdui-top-app-bar-title>
         </mdui-top-app-bar>
 
@@ -28,6 +28,9 @@
 </template>
 
 <script lang="ts" setup>
+    import { useRouter } from 'vue-router'
+    const router = useRouter()
+
     let appInfo = JSON.parse(localStorage.getItem('appInfo')!)
 </script>
 

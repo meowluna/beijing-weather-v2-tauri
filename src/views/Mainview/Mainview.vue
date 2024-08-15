@@ -22,6 +22,6 @@
 
     const navRouterList = ['/home', '/other']
     function navRouter(num: number) {
-        router.push({ path: navRouterList[num] })
+        router.replace({ path: navRouterList[num] })
     }
 </script>

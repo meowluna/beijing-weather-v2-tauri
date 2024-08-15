@@ -4,8 +4,8 @@
             <mdui-top-app-bar-title> 其他 </mdui-top-app-bar-title>
         </mdui-top-app-bar>
         <mdui-list>
-            <mdui-list-item icon="settings" @click="navRouter(2, 1)">设置</mdui-list-item>
-            <mdui-list-item icon="info" @click="navRouter(3, 1)">关于</mdui-list-item>
+            <mdui-list-item icon="settings" @click="navRouter(0, 1)">设置</mdui-list-item>
+            <mdui-list-item icon="info" @click="navRouter(1, 1)">关于</mdui-list-item>
         </mdui-list>
     </div>
 </template>
@@ -17,8 +17,8 @@
 
     document.body.classList.add('body')
 
-    const navRouterList = ['/home', '/other', '/other/setting', '/other/about']
+    const navRouterList = ['/other/setting', '/other/about']
     function navRouter(num: number, level?: number) {
-        level == 1 ? router.push({ path: navRouterList[num] }) : router.replace({ path: navRouterList[num] })
+        router.push({ path: navRouterList[num] })
     }
 </script>
