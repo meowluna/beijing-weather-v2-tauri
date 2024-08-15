@@ -5,13 +5,13 @@
     .slide-left-leave-active {
         box-shadow: -20px 0 20px 0px rgba(0, 0, 0, 0.03);
         will-change: transform;
-        transition: transform 0.5s, opacity 0.5s;
+        transition: transform 0.4s, opacity 0.4s;
         position: absolute;
         left: 0;
         right: 0;
         top: 0;
         bottom: 0;
-        padding-top: 152px;
+		padding: 160px 8px 8px 8px;
     }
 
     .slide-right-enter-from {
@@ -35,7 +35,7 @@
     }
     .fade-leave-active,
     .fade-enter-active {
-        transition: opacity 0.5s;
+        transition: opacity 0.4s;
     }
     .fade-enter-from {
         opacity: 0;

@@ -24,14 +24,20 @@
     router.afterEach((to, from) => {
         const toDepth = to.path.split('/').length
         const fromDepth = from.path.split('/').length
-        if (toDepth < fromDepth) {
+        if (toDepth == fromDepth || from.path == '/') {
+            to.meta.transition = 'fade'
+        } else if (toDepth < fromDepth) {
             to.meta.transition = 'slide-right'
         } else if (toDepth > fromDepth) {
             to.meta.transition = 'slide-left'
-        } else {
-            to.meta.transition = 'fade'
         }
     })
 </script>
 
 <style src="/src/assets/css/transition.css"></style>
+
+<style>
+    body {
+        padding-top: 152px;
+    }
+</style>

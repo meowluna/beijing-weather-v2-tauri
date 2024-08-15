@@ -66,9 +66,6 @@
 </script>
 
 <style>
-    /* .body {
-        padding-top: 152px !important;
-    } */
     mdui-card {
         width: 96%;
         margin: 0 2% 2% 2%;
@@ -76,8 +73,5 @@
     mdui-tab-panel {
         width: 96%;
         margin: 1% 2% 2% 2%;
-    }
-    body {
-        margin: 0 0 0 0 !important;
     }
 </style>

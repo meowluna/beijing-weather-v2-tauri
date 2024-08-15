@@ -34,9 +34,3 @@
         }
     })
 </script>
-
-<style>
-    body {
-        padding-top: 152px;
-    }
-</style>
