@@ -88,8 +88,8 @@
 
 <script lang="ts" setup>
     import axios from 'axios'
-    const forecastRes = (await axios.get('http://62.234.62.126:8001/bms?id=11')).data
 
+    const forecastRes = (await axios.get('http://62.234.62.126:8001/bms?id=11')).data
     //3小时
     let threeHours = JSON.parse(forecastRes.ThreeHours)
     //36小时

@@ -1,11 +1,11 @@
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
 import { fileURLToPath, URL } from 'node:url'
 
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+const host = process.env.TAURI_DEV_HOST;
 
 // https://vitejs.dev/config/
-export default defineConfig({
-	base: './',
+export default defineConfig(async () => ({
 	plugins: [
 		vue({
 			template: {
@@ -21,21 +21,26 @@ export default defineConfig({
 			'@': fileURLToPath(new URL('./src', import.meta.url))
 		}
 	},
-	build: {
-		rollupOptions: {
-			output: {  //静态资源分类打包
-				chunkFileNames: 'assets/js/[name]-[hash].js',
-				entryFileNames: 'assets/js/[name]-[hash].js',
-				assetFileNames: 'assets/[ext]/[name]-[hash].[ext]',
 
-				manualChunks(id) { //静态资源拆分打包
-					if (id.includes('node_modules')) {
-						return id.toString().split('node_modules/')[1].split('/')[0].toString();
-					}
-				}
-
+	// Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`
+	//
+	// 1. prevent vite from obscuring rust errors
+	clearScreen: false,
+	// 2. tauri expects a fixed port, fail if that port is not available
+	server: {
+		port: 5175,
+		strictPort: true,
+		host: host,
+		hmr: host
+			? {
+				protocol: "ws",
+				host,
+				port: 5185,
 			}
-
-		}
-	}
-})
+			: undefined,
+		watch: {
+			// 3. tell vite to ignore watching `src-tauri`
+			ignored: ["**/src-tauri/**"],
+		},
+	},
+}));
