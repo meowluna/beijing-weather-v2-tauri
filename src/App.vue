@@ -10,7 +10,7 @@
 
 <script lang="ts" setup>
     import { useRouter } from 'vue-router'
-    import { routerTransition } from '@/hooks/useRouterTransition'
+    import { routerTransition } from '@/hooks/useRouterTransition.ts'
     const router = useRouter()
     routerTransition(router)
 
